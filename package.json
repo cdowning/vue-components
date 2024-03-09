@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "primevue": "^3.49.1",
     "vue": "^3.4.19"
   },
   "devDependencies": {

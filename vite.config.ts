@@ -4,7 +4,16 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [vue()],
+    build: {
+        rollupOptions: {
+            external: ['vue'],
+            output: {
+                globals: {
+                    vue: 'Vue',
+                },
+            },
+        },
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),
@@ -15,9 +24,10 @@ export default defineConfig({
             scss: {
                 additionalData: `
                     @import "@/assets/scss/variables.scss";
-                    @import "@/assets/scss/tailwind.css";
+                    @import "@/assets/scss/tailwind.scss";
                 `,
             },
         },
     },
+    plugins: [vue()],
 });
