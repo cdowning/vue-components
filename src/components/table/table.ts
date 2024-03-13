@@ -16,10 +16,16 @@ const Table = defineComponent({
         Column,
     },
     props: {
+        // Table Props
         data: {
             type: Array,
             default: () => [],
         },
+        showFooter: {
+            type: Boolean,
+            default: false,
+        },
+        // Column Props
         columns: {
             type: Array,
             default: () => [],

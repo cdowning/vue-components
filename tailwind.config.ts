@@ -4,7 +4,7 @@ import colors from './colors';
 
 export default {
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-    important: true,
+    // important: true,
     darkMode: 'class',
     theme: {
         // Using this for color palette in storybook

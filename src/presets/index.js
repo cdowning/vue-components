@@ -4,6 +4,7 @@ import multiselect from './multiselect';
 import dropdown from './dropdown';
 import datatable from './datatable';
 import galleria from './galleria';
+import fileupload from './fileupload';
 
 export default {
     global,
@@ -11,5 +12,6 @@ export default {
     multiselect,
     dropdown,
     datatable,
-    galleria
-}
+    galleria,
+    fileupload,
+};

@@ -257,5 +257,6 @@ export const Primary = {
         data: tableData,
         columns: tableColumns,
         sortable: true,
+        showFooter: true,
     },
 } satisfies Story;

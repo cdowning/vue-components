@@ -8,6 +8,10 @@
                 :header="col.header"
                 :sortable="sortable"
             ></Column>
+
+            <template v-if="showFooter" #footer>
+                Total of {{ data ? data.length : 0 }} items.
+            </template>
         </DataTable>
     </div>
 </template>
