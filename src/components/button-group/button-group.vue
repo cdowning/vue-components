@@ -11,7 +11,7 @@
         >
             <template #option="{ option }">
                 <div class="flex align-items-center">
-                    <q-icon
+                    <Icon
                         v-if="option.icon"
                         :icon="option.icon"
                         class="mr-2"
@@ -27,5 +27,49 @@
     </div>
 </template>
 
-<script lang="ts" src="./button-group.ts"></script>
+<!-- <script lang="ts" src="./button-group.ts"></script> -->
+<script lang="ts" setup>
+import { computed } from 'vue';
+import SelectButton from 'primevue/selectbutton';
+
+interface Options {
+    label: string;
+    value: string | number;
+    isDisabled?: boolean;
+    icon?: string;
+}
+
+export interface Props {
+    modelValue?: string | Object | Array<Options>;
+    options?: Array<string | Options>;
+    optionLabel?: string;
+    optionDisabled?: string;
+    labelBy?: string;
+    allowMultiple?: boolean;
+    disabled?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+    modelValue: null,
+    options: () => [],
+    optionLabel: '',
+    optionDisabled: '',
+    labelBy: '',
+    allowMultiple: false,
+    disabled: false,
+});
+
+const emit = defineEmits(['update:modelValue']);
+
+const selected = computed({
+    get: () => props.modelValue,
+    set: (value) => emit('update:modelValue', value),
+});
+
+const onClick = (event) => {
+    console.log(event);
+    // emit("click", 1);
+};
+</script>
+
 <style lang="scss" src="./button-group.scss"></style>

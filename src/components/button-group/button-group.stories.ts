@@ -93,23 +93,24 @@ export const DisabledOption: Story = {
     },
 } satisfies Story;
 
-// export const HasIcons = {
-//     render: (args: Args) => ({
-//         components: { ButtonGroup },
-//         setup() {
-//             const value = ref([{ label: 'Option 2', value: 2, icon: 'check' }]);
+export const HasIcons = {
+    render: (args: Args) => ({
+        components: { ButtonGroup },
+        setup() {
+            const value = ref([{ label: 'Option 2', value: 2, icon: 'check' }]);
 
-//             return { value, args };
-//         },
-//         template: `<q-button-group v-model="value" v-bind="args" />`,
-//     }),
-//     args: {
-//         options: [
-//             { label: 'Option 1', value: 1, icon: 'list' },
-//             { label: 'Option 2', value: 2, icon: 'check' },
-//             { label: 'Option 3', value: 3 },
-//         ],
-//         allowMultiple: true,
-//         optionLabel: 'name',
-//     },
-// } satisfies Story;
+            return { value, args };
+        },
+        template: `<q-button-group v-model="value" v-bind="args" />`,
+    }),
+    args: {
+        options: [
+            { label: 'Option 1', value: 1, icon: 'list' },
+            { label: 'Option 2', value: 2, icon: 'check' },
+            { label: 'Option 3', value: 3 },
+        ],
+        allowMultiple: true,
+        optionLabel: 'name',
+    },
+    tags: ['inProgress'],
+} satisfies Story;
