@@ -9,7 +9,11 @@ import '../src/assets/scss/fonts.scss';
 import PrimeVue from 'primevue/config';
 import PrimeVuePresets from '../src/presets';
 
+import Icon from '../src/components/icon/icon.vue';
+
 setup((app) => {
+    app.component('Icon', Icon);
+
     app.use(PrimeVue, {
         unstyled: true,
         pt: PrimeVuePresets,
@@ -24,6 +28,19 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i,
             },
+        },
+        backgrounds: {
+            default: 'White',
+            values: [
+                {
+                    name: 'White',
+                    value: '#ffffff',
+                },
+                {
+                    name: 'Light Gray',
+                    value: '#f4f4f4',
+                },
+            ],
         },
     },
 };
