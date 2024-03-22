@@ -66,10 +66,10 @@ const selected = computed({
     set: (value) => emit('update:modelValue', value),
 });
 
-const onClick = (event) => {
-    console.log(event);
-    // emit("click", 1);
-};
+// const onClick = (event) => {
+//     console.log(event);
+//     // emit("click", 1);
+// };
 </script>
 
 <style lang="scss" src="./button-group.scss"></style>
