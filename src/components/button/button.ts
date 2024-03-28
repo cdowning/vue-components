@@ -42,8 +42,7 @@ const Button = defineComponent({
         },
     },
     setup(props, context) {
-        // const buttonClasses = computed<Array<string | Object>>(() => {
-            const buttonClasses = computed<string[] | Object[]>(() => {
+        const buttonClasses = computed<string[] | Object[]>(() => {
             return [
                 'btn-' + props.size,
                 { 'has-icon': !!context.slots.icon },
