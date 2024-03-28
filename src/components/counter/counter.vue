@@ -25,14 +25,14 @@ const props = withDefaults(defineProps<Props>(), {
     modelValue: 0,
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits<{
+    (e: 'update:modelValue', modelValue: number): void;
+}>();
 
 const updateCount = (increment: number): number => {
-    // If current model value is less than or equal to 0, do not do anything
-    if (props.modelValue <= 0) return;
-
     const newValue = props.modelValue + increment;
-    emit('update:modelValue', newValue);
+    // If current model value is less than or equal to 0, emit 0
+    emit('update:modelValue', newValue < 0 ? 0 : newValue);
 
     // Return new value
     return newValue;

@@ -64,17 +64,23 @@ export const Primary: Story = {
         outlined: false,
     },
 };
+
+
+
+
 export const Secondary: Story = {
-    name: 'Secondary Button', // name of story
-    render: (args: Args) => ({
-        components: { Button },
-        setup() {
-            return { args };
-        },
-        template: '<Button v-bind="args">Hello</Button>',
-    }),
-    args: {
-        ...Primary.args,
-        isRounded: false,
+  render: (args: Args) => ({
+    components: { Button },
+    setup() {
+      return { args };
     },
+    template: `<Button v-bind="args">
+            {{ args.default }}
+        </Button>`,
+  }),
+  args: {
+    ...Primary.args,
+    default: 'Hello there',
+    variant: 'secondary',
+  },
 };
